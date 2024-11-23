@@ -1,0 +1,18 @@
+[package]
+name = "eggine"
+version = "0.0.0"
+edition = "2021"
+
+[lib]
+crate-type = ["lib", "cdylib"]
+
+[profile.release]
+lto = true
+panic = "abort"
+opt-level = "z"
+strip = "debuginfo"
+
+[build-dependencies]
+minifier = { version = "=0.2.2", features = ["html"] }
+
+
